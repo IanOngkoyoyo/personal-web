@@ -48,9 +48,9 @@
 }
 
 :root {
-    --background: hsl(214, 95%, 93%);
+    --background: #F9F0E0;
     --secondary-background: oklch(100% 0 0);
-    --main: hsl(217, 100%, 66%);
+    --main: #224248;
     --ring: oklch(0% 0 0);
     --foreground: oklch(0% 0 0);
     --main-foreground: oklch(0% 0 0);
