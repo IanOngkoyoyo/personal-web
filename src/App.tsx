@@ -38,10 +38,10 @@ const App = () => {
         }}
       />
       <Navbar />
-      <div className="p-8 flex flex-col gap-4 relative z-10 mx-auto">
-        <div className="flex gap-4">
-          <Card className="w-1/2 h-fit">
-            <Badge className="bg-[#B5563B] text-white">
+      <div className="p-4 md:p-8 flex flex-col gap-4 relative z-10 mx-auto">
+        <div className="flex flex-col md:flex-row gap-4">
+          <Card className="w-full md:w-1/2 h-fit">
+            <Badge className="bg-[#B5563B] text-white max-w-full whitespace-normal">
               <GiPositionMarker />
               Tangerang, indonesia | Remote ready
             </Badge>
@@ -53,7 +53,7 @@ const App = () => {
                 <p>Fullstack web developer</p>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Card className="p-4 bg-[#B5563B] text-white grid gap-2">
                 <Label className="text-xl">Front-end</Label>
                 <p>
@@ -69,34 +69,45 @@ const App = () => {
               </Card>
             </div>
             <Separator />
-            <div className="flex flex-col">
-              <div className="grid grid-cols-4">
-                <Button>
-                  <FaInstagram />
-                </Button>
-                <Button>
-                  <FaLinkedin />
-                </Button>
-                <Button>
-                  <FaTwitter />
-                </Button>
-                <Button>
-                  <FaWhatsapp />
-                </Button>
+            <div className="flex flex-col gap-3">
+              <div className="grid grid-cols-4 gap-2">
+                <a href="https://www.instagram.com/ianongkoyoyo/">
+                  <Button className="w-full">
+                    <FaInstagram />
+                  </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/ian-ongkoyoyo-0aba4629a/">
+                  <Button className="w-full">
+                    <FaLinkedin />
+                  </Button>
+                </a>
+                <a href="">
+                  <Button className="w-full">
+                    <FaTwitter />
+                  </Button>
+                </a>
+                <a href="">
+                  <Button className="w-full">
+                    <FaWhatsapp />
+                  </Button>
+                </a>
               </div>
               <Button>Contact Me</Button>
             </div>
           </Card>
+
           <Card
             id="aboutMe"
-            className="bg-white w-full h-fit p-15"
+            className="bg-white w-full h-fit p-6 md:p-15"
           >
-            <div className="flex justify-between">
+            <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
               <Label className="text-2xl">About Me . . .</Label>
               <Label>FILE: IAN ONGKOYOYO</Label>
             </div>
             <Separator />
-            <h2 className="text-4xl mt-10">HALO !! I'm Ian Ongkoyoyo</h2>
+            <h2 className="text-3xl md:text-4xl mt-6 md:mt-10">
+              HALO !! I'm Ian Ongkoyoyo
+            </h2>
             <p className="mt-4">
               A Fullstack Web Developer who enjoys building web applications end
               to end — from designing interfaces that are comfortable to use, to
@@ -125,7 +136,7 @@ const App = () => {
               behind the scenes is the key to a scalable application that's easy
               to develop in the long run.
             </p>
-            <p className="mb-15">
+            <p className="mb-6 md:mb-15">
               I'm open to collaboration, freelance projects, as well as
               full-time job opportunities as a Fullstack Developer. Feel free to
               reach out to me via the Contact Me button beside this!
@@ -135,28 +146,58 @@ const App = () => {
 
         <Card id="project">
           <CardTitle>My Project</CardTitle>
-          <p>Some project i've worked in</p>
-          <div className="grid grid-cols-3 gap-4">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <Card>
-                <CardContent className="flex h-80 items-center justify-center">
-                  <span className="text-3xl font-heading">{index + 1}</span>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-3">
+            <Card className="m-8">
+              <CardTitle className="text-2xl font-bold">RuangBaca</CardTitle>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellat repellendus nobis voluptas expedita suscipit deserunt
+                optio non excepturi pariatur facilis cupiditate, dicta ea soluta
+                earum explicabo architecto illum. Laudantium, qui asperiores
+                ipsa odit, eos odio, voluptates nam dolores corrupti incidunt
+                ullam accusantium iusto. Ad, explicabo quasi. Culpa facilis
+                possimus praesentium.
+              </p>
+            </Card>
+            <Card className="m-8">
+              <CardTitle className="text-2xl font-bold">Project 02</CardTitle>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+                qui ipsam provident ipsum veniam asperiores, debitis, suscipit
+                earum culpa voluptatum excepturi ex necessitatibus unde
+                laboriosam quisquam? Fugiat adipisci totam vel nam, laudantium
+                vero eos doloremque quae earum obcaecati debitis modi, provident
+                non repudiandae ex consequatur. Quod sapiente repudiandae
+                recusandae exercitationem!
+              </p>
+            </Card>
+            <Card className="m-8">
+              <CardTitle className="text-2xl font-bold">Project 03</CardTitle>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                architecto quos harum consectetur facere perferendis ducimus
+                nemo odit necessitatibus distinctio. Ex obcaecati exercitationem
+                sed consequatur nobis atque perferendis nesciunt. Aperiam quos
+                facilis ut facere ab! Suscipit id mollitia eveniet, iusto
+                asperiores, omnis dolorum nisi consequuntur dolor nobis, sed in
+                iste.
+              </p>
+            </Card>
           </div>
         </Card>
-        <Card id="techStack" className=" grid gap-1 my-8">
+
+        <Card
+          id="techStack"
+          className="grid gap-1 my-4 md:my-8"
+        >
           <Badge className="text-xl">Competencies</Badge>
-          <h1 className="text-3xl">Tools And Tech</h1>
+          <h1 className="text-2xl md:text-3xl">Tools And Tech</h1>
           <p className="text-md font-light">
             here are the tool i use daily to architech and build a high
             performance web application
           </p>
-          <div
-            className="grid grid-cols-3 gap-4 mx-7 my-10 mt-17"
-          >
-            <Card className="p-4 flex">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-0 md:mx-7 my-6 md:my-10 md:mt-17">
+            <Card className="p-4">
               <Card className="p-3 w-fit bg-white">
                 <FaReact className="text-4xl" />
               </Card>
@@ -201,62 +242,58 @@ const App = () => {
           </div>
         </Card>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Card id="testimonial">
-            <CardContent className="text-3xl font-semibold">
+            <CardContent className="text-2xl md:text-3xl font-semibold">
               Testimonial
             </CardContent>
-            <Card className='bg-[#5e4a44] text-white text-lg'>
+            <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
               "Salah satu student paling proaktif yang pernah saya bimbing.
               Selalu mencari cara untuk memahami root cause masalah, bukan
               sekadar copy-paste solusi dari internet."
             </Card>
-            <Badge className="text-md font-bold">
-              {' '}
+            <Badge className="text-md font-bold max-w-full whitespace-normal">
               — Defryan, Senior Developer
             </Badge>
           </Card>
           <Card>
-            <CardContent className="text-3xl font-semibold">
+            <CardContent className="text-2xl md:text-3xl font-semibold">
               Testimonial
             </CardContent>
-            <Card className='bg-[#5e4a44] text-white text-lg'>
+            <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
               "Kolaborasi lewat GitHub jadi lebih mudah karena commit message
               dan dokumentasinya jelas. Responsif juga saat ada bug yang perlu
               diperbaiki cepat."
             </Card>
-            <Badge className="text-md font-bold">
-              {' '}
+            <Badge className="text-md font-bold max-w-full whitespace-normal">
               - Jovin, FullStack Developer
             </Badge>
           </Card>
           <Card>
-            <CardContent className="text-3xl font-semibold">
+            <CardContent className="text-2xl md:text-3xl font-semibold">
               Testimonial
             </CardContent>
-            <Card className='bg-[#5e4a44] text-white text-lg'>
+            <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
               "Saya pernah satu tim proyek dengan Ian selama 6 bulan. Dia jago
               di frontend maupun backend, dan selalu punya solusi kreatif ketika
               kami mentok di masalah teknis. Tipe developer yang bisa diandalkan
               untuk deadline ketat."
             </Card>
-            <Badge className="text-md font-bold">
-              {' '}
+            <Badge className="text-md font-bold max-w-full whitespace-normal">
               — Vian, Project Manager
             </Badge>
           </Card>
           <Card>
-            <CardContent className="text-3xl font-semibold">
+            <CardContent className="text-2xl md:text-3xl font-semibold">
               Testimonial
             </CardContent>
-            <Card className='bg-[#5e4a44] text-white text-lg'>
+            <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
               "Awalnya saya cuma butuh landing page sederhana, tapi Ian memberi
               saran arsitektur yang bikin website saya jauh lebih scalable untuk
               kebutuhan ke depan. Responsif, cepat tanggap, dan hasilnya
               melebihi ekspektasi."
             </Card>
-            <Badge className="text-md font-bold">
-              {' '}
+            <Badge className="text-md font-bold max-w-full whitespace-normal">
               — Glenn, Bussiness Owner
             </Badge>
           </Card>
@@ -264,22 +301,24 @@ const App = () => {
 
         <Card
           id="contact"
-          className="bg-[#283044] flex flex-row justify-between mt-15"
+          className="bg-[#283044] flex flex-col md:flex-row md:justify-between gap-8 mt-8 md:mt-15"
         >
-          <div className="w-1/2 text-white grid gap-6">
-            <Badge>Let's talk</Badge>
-            <h2 className="text-white text-4xl">
+          <div className="w-full md:w-1/2 text-white grid gap-6 content-start">
+            <Badge className="bg-[#B5563B] text-white max-h-9">
+              Let's talk
+            </Badge>
+            <h2 className="text-white text-2xl md:text-4xl">
               Siap Mewujudkan Proyek Anda?
             </h2>
             <div className="grid gap-2">
               <div className="flex gap-2 items-center">
-                <Card className="bg-blue-800 text-white w-fit p-2">
+                <Card className="bg-[#B5563B] text-white w-fit p-2">
                   <CiMail />
                 </Card>
-                <p>ian.dirga23@gmail.com</p>
+                <p className="break-all">ian.dirga23@gmail.com</p>
               </div>
               <div className="flex gap-2 items-center">
-                <Card className="bg-blue-800 text-white w-fit p-2">
+                <Card className="bg-[#B5563B] text-white w-fit p-2">
                   <CiClock2 />
                 </Card>
                 <p>Response time: less than 24 hours</p>
@@ -292,7 +331,7 @@ const App = () => {
             className="w-full"
           >
             <Card className="bg-white">
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <div className="w-full">
                   <Label>Nama Lengkap</Label>
                   <Input
@@ -325,6 +364,7 @@ const App = () => {
               <div className="flex justify-end">
                 <Button
                   type="submit"
+                  className="w-full sm:w-auto"
                   onClick={() => {
                     console.log({
                       fullname: inputFullname,
