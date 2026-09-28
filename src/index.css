@@ -50,7 +50,7 @@
 :root {
     --background: #F9F0E0;
     --secondary-background: oklch(100% 0 0);
-    --main: #224248;
+    --main: #B5563B;
     --ring: oklch(0% 0 0);
     --foreground: oklch(0% 0 0);
     --main-foreground: oklch(0% 0 0);
