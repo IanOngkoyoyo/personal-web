@@ -150,37 +150,35 @@ const App = () => {
             <Card className="m-8">
               <CardTitle className="text-2xl font-bold">RuangBaca</CardTitle>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellat repellendus nobis voluptas expedita suscipit deserunt
-                optio non excepturi pariatur facilis cupiditate, dicta ea soluta
-                earum explicabo architecto illum. Laudantium, qui asperiores
-                ipsa odit, eos odio, voluptates nam dolores corrupti incidunt
-                ullam accusantium iusto. Ad, explicabo quasi. Culpa facilis
-                possimus praesentium.
+                A library management app for browsing books, managing members,
+                and tracking borrowing and returns, built to replace manual
+                record-keeping with a simple, organized workflow. A full-stack
+                library management app built with React and Express, covering
+                book browsing, member management, and borrowing and returns.
               </p>
             </Card>
             <Card className="m-8">
-              <CardTitle className="text-2xl font-bold">Project 02</CardTitle>
+              <CardTitle className="text-2xl font-bold">
+                Kereta Api Indonesia(KAI)
+              </CardTitle>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-                qui ipsam provident ipsum veniam asperiores, debitis, suscipit
-                earum culpa voluptatum excepturi ex necessitatibus unde
-                laboriosam quisquam? Fugiat adipisci totam vel nam, laudantium
-                vero eos doloremque quae earum obcaecati debitis modi, provident
-                non repudiandae ex consequatur. Quod sapiente repudiandae
-                recusandae exercitationem!
+                This project is a web application themed around PT Kereta Api
+                Indonesia (Indonesia's national railway company). It features
+                company information, products and services, an organizational
+                structure page, and a blog that users can write for after
+                logging in. The frontend is built with Next.js, while Express
+                provides a REST API for authentication and article management,
+                with data stored in PostgreSQL.
               </p>
             </Card>
             <Card className="m-8">
-              <CardTitle className="text-2xl font-bold">Project 03</CardTitle>
+              <CardTitle className="text-2xl font-bold">
+                Klinik Kecantikan
+              </CardTitle>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                architecto quos harum consectetur facere perferendis ducimus
-                nemo odit necessitatibus distinctio. Ex obcaecati exercitationem
-                sed consequatur nobis atque perferendis nesciunt. Aperiam quos
-                facilis ut facere ab! Suscipit id mollitia eveniet, iusto
-                asperiores, omnis dolorum nisi consequuntur dolor nobis, sed in
-                iste.
+                A beauty clinic web app where customers can browse treatments
+                and book appointments online, while the clinic manages schedules
+                and customer data in one organized place.
               </p>
             </Card>
           </div>
