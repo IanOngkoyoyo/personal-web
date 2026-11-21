@@ -82,7 +82,7 @@ const App = () => {
               <img
                 src="/profile-pict.jpg"
                 alt="Ian Ongkoyoyo"
-                className="w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full object-cover object-top border-2 border-[#B5563B]"
+                className="w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full object-cover object-[50%_60%] border-2 border-[#B5563B]"
               />
               <div>
                 <p>Hi, im</p>
