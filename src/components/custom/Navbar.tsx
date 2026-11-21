@@ -35,7 +35,7 @@ export default function Navbar() {
         <Button
           className="lg:hidden"
           onClick={() => setOpen((prev) => !prev)}
-          aria-label={open ? "Tutup menu" : "Buka menu"}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="nav-menu"
         >

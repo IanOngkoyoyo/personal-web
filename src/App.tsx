@@ -1,5 +1,6 @@
 import { Card, CardContent, CardTitle } from './components/ui/card';
 import {
+  FaExternalLinkAlt,
   FaGitAlt,
   FaInstagram,
   FaJs,
@@ -20,6 +21,38 @@ import { Textarea } from './components/ui/textarea';
 import { useState } from 'react';
 import { SiMysql, SiTypescript } from 'react-icons/si';
 import { GiPositionMarker } from 'react-icons/gi';
+
+type Project = {
+  title: string;
+  status: 'Completed' | 'On Progress';
+  description: string;
+  tags: string[];
+  // Put screenshots in /public/projects and reference them like '/projects/ih-clinic.png'
+  image?: string;
+  // Live demo or GitHub repository URL
+  link?: string;
+};
+
+const projects: Project[] = [
+  {
+    title: 'IH Clinic',
+    status: 'Completed',
+    description:
+      'A clinic web application where patients can explore available treatments and book appointments online. On the admin side, the clinic can manage schedules, services, and patient data in one organized dashboard — replacing manual booking with a simple, reliable workflow.',
+    tags: ['React', 'TypeScript', 'Express', 'REST API'],
+    image: '',
+    link: '',
+  },
+  {
+    title: 'Online Grocery App',
+    status: 'On Progress',
+    description:
+      'My final project at Purwadhika Digital Technology School: an online grocery app where customers can browse products from the nearest store, add items to their cart, check out, and track their orders. Store admins can manage products, stock, categories, discounts, and incoming orders from a dedicated dashboard.',
+    tags: ['React', 'TypeScript', 'Express', 'MySQL', 'Team Project'],
+    image: '',
+    link: '',
+  },
+];
 
 const App = () => {
   const [inputFullname, setInputFullname] = useState<string>('');
@@ -43,7 +76,7 @@ const App = () => {
           <Card className="w-full md:w-1/2 h-fit">
             <Badge className="bg-[#B5563B] text-white max-w-full whitespace-normal">
               <GiPositionMarker />
-              Tangerang, indonesia | Remote ready
+              Tangerang, Indonesia | Remote ready
             </Badge>
             <div className="flex gap-4 items-center">
               <Card>Foto</Card>
@@ -147,43 +180,64 @@ const App = () => {
         <Card id="project">
           <CardTitle>My Project</CardTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-4 md:p-8">
-            <Card className="p-6 flex flex-col gap-4">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <CardTitle className="text-2xl font-bold">IH Clinic</CardTitle>
-                <Badge className="bg-[#3B7A57] text-white">Completed</Badge>
-              </div>
-              <p>
-                A clinic web application where patients can explore available
-                treatments and book appointments online. On the admin side, the
-                clinic can manage schedules, services, and patient data in one
-                organized dashboard — replacing manual booking with a simple,
-                reliable workflow.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                <Badge>React</Badge>
-                <Badge>TypeScript</Badge>
-                <Badge>Express</Badge>
-                <Badge>REST API</Badge>
-              </div>
-            </Card>
-            <Card className="p-6 flex flex-col gap-4">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <CardTitle className="text-2xl font-bold">Final Project</CardTitle>
-                <Badge className="bg-[#B5563B] text-white">On Progress</Badge>
-              </div>
-              <p>
-                My final project for the Full Stack Web Development program at
-                Purwadhika Digital Technology School. Built as a team, it brings
-                together everything I've learned — from responsive front-end
-                interfaces to back-end APIs, database design, and authentication.
-                Stay tuned for more details once it launches!
-              </p>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                <Badge>Fullstack</Badge>
-                <Badge>TypeScript</Badge>
-                <Badge>Team Project</Badge>
-              </div>
-            </Card>
+            {projects.map((project) => (
+              <Card
+                key={project.title}
+                className="p-6 flex flex-col gap-4"
+              >
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full aspect-video object-cover rounded-md border"
+                  />
+                ) : (
+                  <div className="w-full aspect-video rounded-md border border-dashed flex items-center justify-center text-sm text-gray-500 bg-[#F5F2E7]">
+                    Preview coming soon
+                  </div>
+                )}
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <CardTitle className="text-2xl font-bold">
+                    {project.title}
+                  </CardTitle>
+                  <Badge
+                    className={`text-white ${
+                      project.status === 'Completed'
+                        ? 'bg-[#3B7A57]'
+                        : 'bg-[#B5563B]'
+                    }`}
+                  >
+                    {project.status}
+                  </Badge>
+                </div>
+                <p>{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <Badge key={tag}>{tag}</Badge>
+                  ))}
+                </div>
+                <div className="mt-auto">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="w-full sm:w-auto">
+                        View Project <FaExternalLinkAlt />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button
+                      className="w-full sm:w-auto"
+                      disabled
+                    >
+                      Link coming soon
+                    </Button>
+                  )}
+                </div>
+              </Card>
+            ))}
           </div>
         </Card>
 
@@ -194,8 +248,8 @@ const App = () => {
           <Badge className="text-xl">Competencies</Badge>
           <h1 className="text-2xl md:text-3xl">Tools And Tech</h1>
           <p className="text-md font-light">
-            here are the tool i use daily to architech and build a high
-            performance web application
+            Here are the tools I use daily to architect and build
+            high-performance web applications
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-0 md:mx-7 my-6 md:my-10 md:mt-17">
             <Card className="p-4">
@@ -249,9 +303,9 @@ const App = () => {
               Testimonial
             </CardContent>
             <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
-              "Salah satu student paling proaktif yang pernah saya bimbing.
-              Selalu mencari cara untuk memahami root cause masalah, bukan
-              sekadar copy-paste solusi dari internet."
+              "One of the most proactive students I've ever mentored. He
+              always tries to understand the root cause of a problem instead
+              of just copy-pasting solutions from the internet."
             </Card>
             <Badge className="text-md font-bold max-w-full whitespace-normal">
               — Defryan, Senior Developer
@@ -262,9 +316,9 @@ const App = () => {
               Testimonial
             </CardContent>
             <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
-              "Kolaborasi lewat GitHub jadi lebih mudah karena commit message
-              dan dokumentasinya jelas. Responsif juga saat ada bug yang perlu
-              diperbaiki cepat."
+              "Collaborating on GitHub is much easier thanks to his clear
+              commit messages and documentation. He's also very responsive
+              whenever a bug needs to be fixed quickly."
             </Card>
             <Badge className="text-md font-bold max-w-full whitespace-normal">
               - Jovin, FullStack Developer
@@ -275,10 +329,10 @@ const App = () => {
               Testimonial
             </CardContent>
             <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
-              "Saya pernah satu tim proyek dengan Ian selama 6 bulan. Dia jago
-              di frontend maupun backend, dan selalu punya solusi kreatif ketika
-              kami mentok di masalah teknis. Tipe developer yang bisa diandalkan
-              untuk deadline ketat."
+              "I worked with Ian on a project team for 6 months. He's skilled
+              in both frontend and backend, and always comes up with creative
+              solutions when we get stuck on technical problems. The kind of
+              developer you can rely on for tight deadlines."
             </Card>
             <Badge className="text-md font-bold max-w-full whitespace-normal">
               — Vian, Project Manager
@@ -289,13 +343,13 @@ const App = () => {
               Testimonial
             </CardContent>
             <Card className="bg-[#5e4a44] text-white text-base md:text-lg">
-              "Awalnya saya cuma butuh landing page sederhana, tapi Ian memberi
-              saran arsitektur yang bikin website saya jauh lebih scalable untuk
-              kebutuhan ke depan. Responsif, cepat tanggap, dan hasilnya
-              melebihi ekspektasi."
+              "I initially only needed a simple landing page, but Ian suggested
+              an architecture that made my website far more scalable for future
+              needs. Responsive, quick to act, and the results exceeded my
+              expectations."
             </Card>
             <Badge className="text-md font-bold max-w-full whitespace-normal">
-              — Glenn, Bussiness Owner
+              — Glenn, Business Owner
             </Badge>
           </Card>
         </div>
@@ -309,7 +363,7 @@ const App = () => {
               Let's talk
             </Badge>
             <h2 className="text-white text-2xl md:text-4xl">
-              Siap Mewujudkan Proyek Anda?
+              Ready to Bring Your Project to Life?
             </h2>
             <div className="grid gap-2">
               <div className="flex gap-2 items-center">
@@ -334,12 +388,12 @@ const App = () => {
             <Card className="bg-white">
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="w-full">
-                  <Label>Nama Lengkap</Label>
+                  <Label>Full Name</Label>
                   <Input
                     name="fullname"
                     value={inputFullname}
                     onChange={(value) => setInputFullname(value.target.value)}
-                    placeholder="Input Nama Lengkap"
+                    placeholder="Enter your full name"
                   />
                 </div>
                 <div className="w-full">
@@ -349,17 +403,17 @@ const App = () => {
                     value={inputEmail}
                     onChange={(value) => setInputEmail(value.target.value)}
                     type="email"
-                    placeholder="Input Email"
+                    placeholder="Enter your email"
                   />
                 </div>
               </div>
               <div>
-                <Label>Pesan / ide proyek</Label>
+                <Label>Message / project idea</Label>
                 <Textarea
                   name="description"
                   value={inputDescription}
                   onChange={(value) => setInputDescription(value.target.value)}
-                  placeholder="Ceritakan kebutuhan aplikasi web anda disini"
+                  placeholder="Tell me about the web application you need"
                 />
               </div>
               <div className="flex justify-end">
@@ -374,7 +428,7 @@ const App = () => {
                     });
                   }}
                 >
-                  Kirim pesan
+                  Send Message
                 </Button>
               </div>
             </Card>
