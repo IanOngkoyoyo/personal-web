@@ -146,40 +146,43 @@ const App = () => {
 
         <Card id="project">
           <CardTitle>My Project</CardTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 p-4 md:p-8">
-            <Card className="m-8">
-              <CardTitle className="text-2xl font-bold">RuangBaca</CardTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-4 md:p-8">
+            <Card className="p-6 flex flex-col gap-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <CardTitle className="text-2xl font-bold">IH Clinic</CardTitle>
+                <Badge className="bg-[#3B7A57] text-white">Completed</Badge>
+              </div>
               <p>
-                A library management app for browsing books, managing members,
-                and tracking borrowing and returns, built to replace manual
-                record-keeping with a simple, organized workflow. A full-stack
-                library management app built with React and Express, covering
-                book browsing, member management, and borrowing and returns.
+                A clinic web application where patients can explore available
+                treatments and book appointments online. On the admin side, the
+                clinic can manage schedules, services, and patient data in one
+                organized dashboard — replacing manual booking with a simple,
+                reliable workflow.
               </p>
+              <div className="flex flex-wrap gap-2 mt-auto">
+                <Badge>React</Badge>
+                <Badge>TypeScript</Badge>
+                <Badge>Express</Badge>
+                <Badge>REST API</Badge>
+              </div>
             </Card>
-            <Card className="m-8">
-              <CardTitle className="text-2xl font-bold">
-                Kereta Api Indonesia(KAI)
-              </CardTitle>
+            <Card className="p-6 flex flex-col gap-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <CardTitle className="text-2xl font-bold">Final Project</CardTitle>
+                <Badge className="bg-[#B5563B] text-white">On Progress</Badge>
+              </div>
               <p>
-                This project is a web application themed around PT Kereta Api
-                Indonesia (Indonesia's national railway company). It features
-                company information, products and services, an organizational
-                structure page, and a blog that users can write for after
-                logging in. The frontend is built with Next.js, while Express
-                provides a REST API for authentication and article management,
-                with data stored in PostgreSQL.
+                My final project for the Full Stack Web Development program at
+                Purwadhika Digital Technology School. Built as a team, it brings
+                together everything I've learned — from responsive front-end
+                interfaces to back-end APIs, database design, and authentication.
+                Stay tuned for more details once it launches!
               </p>
-            </Card>
-            <Card className="m-8">
-              <CardTitle className="text-2xl font-bold">
-                Klinik Kecantikan
-              </CardTitle>
-              <p>
-                A beauty clinic web app where customers can browse treatments
-                and book appointments online, while the clinic manages schedules
-                and customer data in one organized place.
-              </p>
+              <div className="flex flex-wrap gap-2 mt-auto">
+                <Badge>Fullstack</Badge>
+                <Badge>TypeScript</Badge>
+                <Badge>Team Project</Badge>
+              </div>
             </Card>
           </div>
         </Card>
