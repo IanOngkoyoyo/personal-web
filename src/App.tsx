@@ -79,7 +79,11 @@ const App = () => {
               Tangerang, Indonesia | Remote ready
             </Badge>
             <div className="flex gap-4 items-center">
-              <Card>Foto</Card>
+              <img
+                src="/profile-pict.jpg"
+                alt="Ian Ongkoyoyo"
+                className="w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full object-cover object-top border-2 border-[#B5563B]"
+              />
               <div>
                 <p>Hi, im</p>
                 <Label className="text-xl">Ian Ongkoyoyo</Label>
