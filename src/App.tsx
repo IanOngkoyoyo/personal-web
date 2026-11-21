@@ -40,7 +40,7 @@ const projects: Project[] = [
     description:
       'A clinic web application where patients can explore available treatments and book appointments online. On the admin side, the clinic can manage schedules, services, and patient data in one organized dashboard — replacing manual booking with a simple, reliable workflow.',
     tags: ['React', 'TypeScript', 'Express', 'REST API'],
-    image: '',
+    image: '/projects/ih-clinic.png',
     link: '',
   },
   {
